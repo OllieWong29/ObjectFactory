@@ -7,6 +7,7 @@ public class Factory {
     public String yearFounded = "1738";
     public Donuts donutOrder1;
     public Donuts donutOrder2;
+    public int randomNumber;
 
     //class = blueprint
     //object = house
@@ -20,6 +21,8 @@ public class Factory {
 
     }//end of psvm
 
+    //start of the souts
+
     //special method: constructor
     public Factory(){
         System.out.println("Welcome to Ollie's Factory");
@@ -27,21 +30,27 @@ public class Factory {
         System.out.println(yearFounded);
         System.out.println("it is " + isOpen + " that the factory is open");
 
+        randomNumber = (int)(Math.random() * 100) +1;
+
         //make an object of type Donut
-        donutOrder1 = new Donuts();
+        donutOrder1 = new Donuts(randomNumber);
         System.out.println("they ordered " + donutOrder1.numberOfDonuts +  " donuts");
         System.out.println("it is " + donutOrder1.hasFilling + " that the donuts have filling");
         System.out.println("the donut flavor is " + donutOrder1.frostingType);
 
-        donutOrder1.numberOfDonuts = donutOrder1.numberOfDonuts + 1;
-        System.out.println(donutOrder1.numberOfDonuts);
+//        donutOrder1.numberOfDonuts = donutOrder1.numberOfDonuts + 1;
+//todo: make the 2nd order have a range of 1-45
 
-        donutOrder2 = new Donuts();
-        System.out.println("they ordered " + donutOrder2.numberOfDonuts + " donuts");
-        System.out.println("it is " + donutOrder2.hasFilling + "that the donuts have filling");
+        randomNumber = (int)(Math.random() * 45)+1;
+
+        donutOrder2 = new Donuts(randomNumber);
+        System.out.println("they ordered  " + donutOrder2.numberOfDonuts + " donuts");
+        System.out.println("it is " + donutOrder2.hasFilling + " that the donuts have filling");
         System.out.println("the donut flavor is " + donutOrder2.frostingType);
-        donutOrder2.numberOfDonuts = donutOrder1.numberOfDonuts*2;
-        System.out.println(donutOrder2.numberOfDonuts);
+//        donutOrder2.numberOfDonuts = donutOrder1.numberOfDonuts*2;
+//        System.out.println(donutOrder2.numberOfDonuts);
+
+//        donutOrder2.printInfo();
     }//end of Factory
 
 }//end of file
